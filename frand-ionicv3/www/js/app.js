@@ -17,6 +17,7 @@ $stateProvider
       templateUrl: 'views/register/register.html',
       controller:'registerController'
     })
+
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html',
@@ -27,6 +28,67 @@ $stateProvider
       templateUrl: 'views/profile/profile.html',
       controller:'profileController'
     })
+
+//woooooooooooooooooooooooooooooow
+
+
+  .state('menu.frands', {
+    url: '/frands',
+    views: {
+      'side-menu21': {
+        templateUrl: 'views/frands.html',
+        controller: 'frandsCtrl'
+      }
+    }
+  })
+
+  .state('menu.profile', {
+    url: '/profile',
+    views: {
+      'side-menu21': {
+        templateUrl: 'views/profile.html',
+        controller: 'profileCtrl'
+      }
+    }
+  })
+
+  .state('menu', {
+    url: '/side-menu21',
+    templateUrl: 'views/menu.html',
+    abstract:true
+  })
+
+  .state('menu.currentFrands', {
+    url: '/active',
+    views: {
+      'side-menu21': {
+        templateUrl: 'views/currentFrands.html',
+        controller: 'currentFrandsCtrl'
+      }
+    }
+  })
+
+  .state('menu.frandHistory', {
+    url: '/history',
+    views: {
+      'side-menu21': {
+        templateUrl: 'views/frandHistory.html',
+        controller: 'frandHistoryCtrl'
+      }
+    }
+  })
+
+  .state('menu.settings', {
+    url: '/settings',
+    views: {
+      'side-menu21': {
+        templateUrl: 'views/settings.html',
+        controller: 'settingsCtrl'
+      }
+    }
+  })
+
+  //endddddddddd
     ;
 $urlRouterProvider.otherwise("/login");
 })

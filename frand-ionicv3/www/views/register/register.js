@@ -7,7 +7,7 @@ angular.module('App').controller('registerController', function ($scope, $state,
     Auth.register(user)
       .then(function() {
          Utils.hide();
-         console.log("Antes de loguear:" + JSON.stringify(user));
+         console.log("Logging in" + JSON.stringify(user));
          Utils.alertshow("Successfully","The User was Successfully Created.");
          $location.path('/');
       }, function(err) {

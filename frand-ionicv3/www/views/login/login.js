@@ -43,7 +43,7 @@ angular.module('App').controller('loginController', function ($scope, $state,$co
 
           var credential = firebase.auth.FacebookAuthProvider.credential(
             response.authResponse.accessToken);
-          $state.go('home');
+          $state.go('menu.frands');
           $log.log("Starter page","Home");
 
 

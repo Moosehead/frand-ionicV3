@@ -29,7 +29,7 @@ angular.module('App').factory('Auth', function(FURL, $log, $firebaseAuth, $fireb
       /*
       var profile = {
 				id: uid,
-        name: user.name,
+        name: user.name,sdasd
         lastname: user.lastname,
         address: user.address,
         email: user.email,
@@ -108,3 +108,5 @@ angular.module('App').factory('Auth', function(FURL, $log, $firebaseAuth, $fireb
 	return Auth;
 
 });
+
+
