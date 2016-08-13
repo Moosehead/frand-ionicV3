@@ -28,9 +28,7 @@ $stateProvider
       templateUrl: 'views/profile/profile.html',
       controller:'profileController'
     })
-
 //woooooooooooooooooooooooooooooow
-
 
   .state('menu.frands', {
     url: '/frands',
@@ -55,7 +53,8 @@ $stateProvider
   .state('menu', {
     url: '/side-menu21',
     templateUrl: 'views/menu.html',
-    abstract:true
+    abstract:true,
+
   })
 
   .state('menu.currentFrands', {
@@ -87,7 +86,6 @@ $stateProvider
       }
     }
   })
-
   //endddddddddd
     ;
 $urlRouterProvider.otherwise("/login");
@@ -100,11 +98,10 @@ $urlRouterProvider.otherwise("/login");
     storageBucket: "frand-ionic.appspot.com",
   }
   )
+
 .run(function($ionicPlatform,ngFB) {
   ngFB.init({appId: '640206552794953'});
   $ionicPlatform.ready(function(FURL) {
-
-
     // AdMob
             if(window.AdMob) {
                 var admobid;
