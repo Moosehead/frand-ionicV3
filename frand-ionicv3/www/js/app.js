@@ -5,7 +5,8 @@ $stateProvider
     .state('login', {
       url: '/login',
       templateUrl: 'views/login/login.html',
-      controller:'loginController'
+      controller:'loginController',
+      service:'loginService'
     })
     .state('forgot', {
       url: '/forgot',
@@ -28,24 +29,27 @@ $stateProvider
       templateUrl: 'views/profile/profile.html',
       controller:'profileController'
     })
-//woooooooooooooooooooooooooooooow
+
+//Menu stuff
 
   .state('menu.frands', {
     url: '/frands',
     views: {
       'side-menu21': {
-        templateUrl: 'views/frands.html',
-        controller: 'frandsCtrl'
+        templateUrl: 'views/main/frands.html',
+        controller: 'frandsCtrl',
+        service:'loginService'
+
       }
     }
   })
 
-  .state('menu.profile', {
-    url: '/profile',
+  .state('menu.createRoom', {
+    url: '/createRoom',
     views: {
       'side-menu21': {
-        templateUrl: 'views/profile.html',
-        controller: 'profileCtrl'
+        templateUrl: 'views/main/createRoom.html',
+        controller: 'createRoomCtrl'
       }
     }
   })
@@ -57,50 +61,74 @@ $stateProvider
 
   })
 
-  .state('menu.currentFrands', {
-    url: '/active',
-    views: {
-      'side-menu21': {
-        templateUrl: 'views/currentFrands.html',
-        controller: 'currentFrandsCtrl'
-      }
-    }
-  })
 
-  .state('menu.frandHistory', {
-    url: '/history',
-    views: {
-      'side-menu21': {
-        templateUrl: 'views/frandHistory.html',
-        controller: 'frandHistoryCtrl'
-      }
-    }
-  })
+  //
+  // .state('menu.profile', {
+  //   url: '/profile',
+  //   views: {
+  //     'side-menu21': {
+  //       templateUrl: 'views/profile.html',
+  //       controller: 'profileCtrl'
+  //     }
+  //   }
+  // })
 
-  .state('menu.settings', {
-    url: '/settings',
-    views: {
-      'side-menu21': {
-        templateUrl: 'views/settings.html',
-        controller: 'settingsCtrl'
-      }
-    }
-  })
-  //endddddddddd
+
+
+  // .state('menu.currentFrands', {
+  //   url: '/active',
+  //   views: {
+  //     'side-menu21': {
+  //       templateUrl: 'views/currentFrands.html',
+  //       controller: 'currentFrandsCtrl'
+  //     }
+  //   }
+  // })
+  //
+  // .state('menu.frandHistory', {
+  //   url: '/history',
+  //   views: {
+  //     'side-menu21': {
+  //       templateUrl: 'views/frandHistory.html',
+  //       controller: 'frandHistoryCtrl'
+  //     }
+  //   }
+  // })
+
+  // .state('menu.settings', {
+  //   url: '/settings',
+  //   views: {
+  //     'side-menu21': {
+  //       templateUrl: 'views/settings.html',
+  //       controller: 'settingsCtrl'
+  //     }
+  //   }
+  // })
+
+
+  //end of menu stuff
     ;
 $urlRouterProvider.otherwise("/login");
 })
+
+
+
+
+
 // Changue this for your Firebase App URL.
+
 .constant('FURL', {
     apiKey: "AIzaSyA0VeyypLeoi-qGj7pL-vzcLLLcAcs46ZM",
     authDomain: "frand-ionic.firebaseapp.com",
     databaseURL: "https://frand-ionic.firebaseio.com",
     storageBucket: "frand-ionic.appspot.com",
   }
+
   )
 
-.run(function($ionicPlatform,ngFB) {
+.run(function($ionicPlatform, ngFB) {
   ngFB.init({appId: '640206552794953'});
+
   $ionicPlatform.ready(function(FURL) {
     // AdMob
             if(window.AdMob) {

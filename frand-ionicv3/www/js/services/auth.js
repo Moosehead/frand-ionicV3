@@ -1,4 +1,4 @@
-angular.module('App').factory('Auth', function(FURL, $log, $firebaseAuth, $firebaseArray, $firebaseObject, Utils) {
+angular.module('App').factory('Auth', function(FURL, $log,$state,$firebaseAuth, $firebaseArray, $firebaseObject, Utils) {
 
 	//var ref = new Firebase(FURL);
 
@@ -8,7 +8,10 @@ angular.module('App').factory('Auth', function(FURL, $log, $firebaseAuth, $fireb
   //var auth = $firebaseObject(ref);
   var auth = $firebaseAuth();
 
+  var userDB = firebase.database().ref("users")
+
 	var Auth = {
+
 		user: {},
 
     login: function(user) {
@@ -70,31 +73,56 @@ angular.module('App').factory('Auth', function(FURL, $log, $firebaseAuth, $fireb
 				});
     },
 
-    facebookAuth: function () {
-      ngFB.login({ scope: 'email' }).then(
-        function (response) {
-          if (response.status === 'connected') {
-            console.log('Facebook login succeeded', response);
+    // travelBidsFirebaseRef.child('user/'+user.uid).set(user, callback);
+    
+      facebookFirebase: function(uid){
 
-            var credential = firebase.auth.FacebookAuthProvider.credential(
-              response.authResponse.accessToken);
+      var specificUser= firebase.database().ref("users/"+uid);
 
-            firebase.auth().signInWithCredential(credential).catch(function (error) {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              // The email of the user's account used.
-              var email = error.email;
-              // The firebase.auth.AuthCredential type that was used.
-              var credential = error.credential;
-              // ...
-            });
+      specificUser.once("value").then(function(snapshot){
+        if (snapshot.exists()==true){
+          
+        }else{
+          ref.child("users/"+uid).set({"uid":uid,}).then(function(success){
+            
+            
+          }).catch(function (error) {
+            
 
-          } else {
-            alert('Facebook login failed');
+          })
+
+
           }
-        });
+
+      })
+
     },
+
+    // facebookAuth: function () {
+    //   ngFB.login({ scope: 'email' }).then(
+    //     function (response) {
+    //       if (response.status === 'connected') {
+    //         console.log('Facebook login succeeded', response);
+    //
+    //         var credential = firebase.auth.FacebookAuthProvider.credential(
+    //           response.authResponse.accessToken);
+    //
+    //         firebase.auth().signInWithCredential(credential).catch(function (error) {
+    //           // Handle Errors here.
+    //           var errorCode = error.code;
+    //           var errorMessage = error.message;
+    //           // The email of the user's account used.
+    //           var email = error.email;
+    //           // The firebase.auth.AuthCredential type that was used.
+    //           var credential = error.credential;
+    //           // ...
+    //         });
+    //
+    //       } else {
+    //         alert('Facebook login failed');
+    //       }
+    //     });
+    // },
 
 
 		changePassword: function(user) {

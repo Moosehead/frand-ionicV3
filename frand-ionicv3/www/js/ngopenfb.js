@@ -43,6 +43,7 @@ angular.module('ngOpenFB', [])
                 deferred.reject(error);
             };
             $window.openFB.api(obj);
+          
             return deferred.promise;
         }
 
