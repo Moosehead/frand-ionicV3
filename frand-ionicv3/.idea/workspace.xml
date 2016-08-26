@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="76607c7b-ad61-44ad-b0f4-2617c9885449" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< Updated upstream
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/controllers.js" afterPath="$PROJECT_DIR$/www/js/controllers/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/views/frands.html" afterPath="$PROJECT_DIR$/www/views/frands.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/views/login/login.js" afterPath="$PROJECT_DIR$/www/views/login/login.js" />
+=======
+>>>>>>> Stashed changes
     </list>
     <ignored path="frand-ionicv3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +44,13 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="315">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+=======
+            <state relative-caret-position="540">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -146,10 +154,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< Updated upstream
     <option name="x" value="-4" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
+=======
+    <option name="x" value="1759" />
+    <option name="y" value="389" />
+    <option name="width" value="1531" />
+    <option name="height" value="814" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -400,15 +415,26 @@
       <updated>1469590709923</updated>
       <workItem from="1469590711348" duration="29942000" />
       <workItem from="1470443795378" duration="7074000" />
+<<<<<<< Updated upstream
       <workItem from="1470765034468" duration="11956000" />
+=======
+      <workItem from="1470765034468" duration="77472000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="48972000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="23" width="1280" height="716" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="114488000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1759" y="389" width="1531" height="814" extended-state="0" />
+>>>>>>> Stashed changes
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -836,8 +862,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="270">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+=======
+        <state relative-caret-position="540">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
