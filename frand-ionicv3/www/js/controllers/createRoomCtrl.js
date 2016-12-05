@@ -2,6 +2,7 @@
  * Created by Moosa on 2016-08-16.
  */
 'Use Strict';
+
 angular.module('App')
 
   .controller('createRoomCtrl', ['$scope', '$stateParams', '$state','$localStorage','$location','$http','$ionicPopup','$firebaseObject','Auth','FURL','Utils','mainFrandFactory',
@@ -11,13 +12,9 @@ angular.module('App')
       $scope.roomInfo={};
 
       $scope.RoomSwitch = function(){
-
         $state.go('menu.frands');
-
-      }
-
-
-
+      };
+      
       $scope.createRoom = function(){
         Utils.show();
         var postData= {
@@ -26,7 +23,7 @@ angular.module('App')
           "time": $scope.roomInfo.time,
           "desc": $scope.roomInfo.description,
           "tags": $scope.roomInfo.tags
-        };
+        }
 
         mainFrandFactory.create(postData).then(function(data){
           Utils.hide();
@@ -34,7 +31,6 @@ angular.module('App')
         },function(err){
           Utils.hide();
           Utils.errMessage(err);
-
         });
 
 

@@ -7,7 +7,7 @@ angular.module('App')
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $state, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, ngFB ,FURL, Utils,mainFrandFactory) {
-
+  $scope.room_list={};
   $scope.fireUser={};
 
   ngFB.api({
@@ -22,7 +22,6 @@ function ($scope, $stateParams, $state, $localStorage, $location,$http,$ionicPop
     });
 
   $scope.updateInfo=function(){
-
     var user = firebase.auth().currentUser;
     if (user != null) {
       $scope.fireUser = user;
@@ -40,13 +39,44 @@ function ($scope, $stateParams, $state, $localStorage, $location,$http,$ionicPop
       });
     }
 
+  };
+  
+  $scope.switchChat=function(){
+    
   }
+
+  $scope.retrieveRoom = function(){
+    // var user_char = {};
+    var ref = firebase.database().ref("rooms").on('value',function(snapshot){
+      snapshot.forEach(function(child){
+        var key = child.key;
+        var value = child.val();
+        // console.log(value);
+        // room_list.push(value);
+        $scope.room_list[key] = value;
+      });
+      // console.log(user_char);
+    },function(error){
+
+      
+    });
+    console.log($scope.room_list);
+    return ref;
+  };
+
+
 
   $scope.createRoomSwitch = function(){
 
     $state.go('menu.createRoom');
 
-  }
+  };
+  $scope.switchChat=function(){
+    $state.go('menu.chatroom');
+
+
+  };
+
 
   $scope.logout=function(){
 

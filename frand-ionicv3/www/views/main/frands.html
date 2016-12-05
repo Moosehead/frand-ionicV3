@@ -1,4 +1,4 @@
-<ion-view title="Frands" id="page1" class=" "  ng-init="updateInfo()">
+<ion-view title="Frands" id="page1" class=" "  ng-init="updateInfo(); retrieveRoom()">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -6,15 +6,20 @@
 
   <ion-content padding="true" class="has-header"
 
-    <div class="item">
-      <h2>{{user.name}}</h2>
+    <div class="item" ng-show="user.name.length != 0">
+      <h2>Moosa Baquie</h2>
     </div>
 
-    <div class ="row">
+  <div class="item" ng-show="user.name.length == 0">
+    <h2></h2>
+  </div>
 
-      <a href =" " > <i class="icon ion-plus-circled pull-right col-offset-90" ng-click="createRoomSwitch();testss()"> </i></a>
 
+  <div class ="row">
+      <a href ="" > <i class="icon ion-plus-circled pull-right col-offset-90" ng-click="createRoomSwitch()"> </i></a>
     </div>
+
+
     <form id="frands-form1" class="list ">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
@@ -22,13 +27,15 @@
       </label>
     </form>
     <div class="spacer" style="width: 300px; height: 27px;"></div>
-    <ion-list id="frands-list1" class=" ">
-      <ion-item class="item-avatar  " id="frands-list-item9">
-        <h2>Item</h2>
+
+
+    <ion-list id="frands-list1" class=" " ng-repeat="obj in room_list">
+      <ion-item class="item-avatar" id="frands-list-item9" ng-click="switchChat()">>
+        <h2>{{obj.name}}</h2>
       </ion-item>
-      <ion-item class="item-avatar  " id="frands-list-item10">
-        <h2>Item</h2>
-      </ion-item>
+      <!--<ion-item class="item-avatar  " id="frands-list-item10">-->
+        <!--<h2>Item</h2>-->
+      <!--</ion-item>-->
     </ion-list>
 
     <button id="logout" class=" button button-positive  button-block " ng-click="logout()"> log out </button>

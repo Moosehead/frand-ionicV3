@@ -17,6 +17,16 @@ angular.module('App').factory('mainFrandFactory', function(FURL, $log, $firebase
       return fDB.update(updates);
     },
 
+    // createMembers:function(roomInfo){
+    //   var dataKey = fDB.child('rooms').push().key;
+    //
+    //   var updates = {};
+    //
+    //   updates['members/'+ dataKey]=roomInfo;
+    //
+    //   return fDB.update(updates);
+    // },
+
     updateUser:function(uid,info){
 
       var postData= {
@@ -30,33 +40,31 @@ angular.module('App').factory('mainFrandFactory', function(FURL, $log, $firebase
       updates['users/'+uid]=postData;
       return fDB.update(updates);
 
-    }
+    },
+    // updateRoom:function(){
+    //   var mio=null;
+    //   // var data =fDB.child('rooms');
+    //   var ref = firebase.database().ref("rooms").on('value',function(snapshot){
+    //     // var rooms= snapshot.val();
+    //     // console.log(rooms);
+    //     // mio = snapshot.val();
+    //   },function(error){
+    //
+    //   });
+    //
+    //   console.log(ref);
+    //
+    //   return ref;
+    //
+    //
+    //
+    // },
 
   }
 
   return frandFactory;
-  
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /** RANDOM CRAP **/
 

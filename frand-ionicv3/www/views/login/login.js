@@ -15,7 +15,6 @@ angular.module('App').controller('loginController', function ($scope, $state,$co
     Utils.show();
     Auth.login(user)
       .then(function(authData) {
-
       $log.log("User ID: " + authData);
        Utils.hide();
       $state.go('menu.frands');
